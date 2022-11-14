@@ -1,0 +1,188 @@
+<script type="text/javascript">
+	// для плавной смены контента
+    $(document).ready(function() {
+      	$("body").css("display", "none");
+    });
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="shortcut icon" type="image/ico" href="../images/favicon.png"/>
+  <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+	2.4 Загрузка фреймворка Kivy и библиотеки
+KivyMD 
+  </title>
+  <link href="../css/mystylecontent.css" rel="stylesheet">
+  <!-- подключение локальной базы данных -->
+  <!-- <script type="text/javascript" src="../js/localdb.js"></script> -->
+ </head>
+ <body>
+	<div class="class">
+		<div id="back-top"><a href="#top"><img src="../images/uparrow.png" style="width: 50px; height: 80px;" alt=""></a></div>
+	</div>
+	<div id="head">
+		<a href="../index.html">На главную</a>
+		<a href="content.html">Содержание</a>
+	</div> 
+	<div id="article">
+		<div class="parent">
+			<div class="child">
+				<h1 class="boxShadow10">2.4 Загрузка фреймворка Kivy и библиотеки
+					KivyMD </h1>	
+				<br>
+					<p>
+						Итак, основной инструментарий для разработки программ на языке
+Python установлен, и мы можем перейти к установке дополнительных
+модулей, с помощью которых можно вести разработку
+кроссплатформенных мобильных и настольных приложений. В этом
+разделе мы установим фреймворк Kivy и библиотеку KivyMD.</p>
+<p align="justify">Запустим среду разработки PyCharm и создадим в ней новый проект
+с именем Kivy_Project. Для этого в главном меню среды выполните
+команду <b>File | New Project</b> (рис. 2.0).
+					</p>
+					<img src="https://sun9-east.userapi.com/sun9-36/s/v1/ig2/uSTPM6bVyvwkc_wzYNjtXsP6mjxf3t7AhPKxn4iRctXJXUJw3Im80aXPa8fjySLtiNOoIVTvzYWTUvmAc5xCaiQ6.jpg?size=498x157&quality=96&type=album">
+					<p style="text-align:center"><b>Рис. 2.0.</b> Создание нового проекта в среде разработки PyCharm</p>
+					<p>Откроется окно, где вы можете задать имя создаваемому проекту,
+определить виртуальное окружение для этого проекта и указать
+каталог, в котором находится интерпретатор Python. В данном окне
+необходимо задать новому проекту имя Kivy_Project, после чего
+нажать кнопку <b>Create</b> (рис. 2.1).</p>
+
+			<p style="text-align:center"><b>Рис. 2.1. </b>Задаем новому проекту имя Kivy_Project в среде разработки PyCharm</p>
+			<p>Будет создан новый проект. Это, по сути дела, шаблон проекта,
+				в котором пока еще ничего нет (рис. 2.2.).</p>
+			<img src="https://sun9-west.userapi.com/sun9-69/s/v1/ig2/l6NvzuuEQwb1rsJ4uZ6A42zvj4llnVZ7dkBjNEYTISaQB8ZziZbR0t3aKq_FX8qyqsSAXRQBRXnV4_SoWSrXQn9_.jpg?size=591x515&quality=96&type=album">	
+<p style="text-align:center"><b>Рис. 2.2.</b> Интерфейс PyCharm с окном пустого проекта</p>
+<p>Теперь в виртуальное окружение созданного проекта нужно
+	добавить фреймворк Kivy – это фактически дополнительная
+	библиотека к Python, и установить этот инструментарий можно так же,
+	как и любую другую библиотеку. Подключение данной библиотеки
+	к проекту можно выполнить двумя способами: через меню PyCharm,
+	или с использованием менеджера пакетов pip в терминальном окне
+	PyCharm.</p>
+	<p align="justify">Для установки библиотеки Kivy первым способом нужно в меню
+	<b>File</b> выбрать опцию <b>Settings</b> (рис. 2.3.).</p>
+<img src="https://sun9-west.userapi.com/sun9-69/s/v1/ig2/d95Mr-bTHBiyecMVir2tSLlp2AV7Gy7Md4jWz7axeEB050vn5Dmw-WiefJTD19S4BuyZL1K9-NlweWmZie_W89rz.jpg?size=315x239&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 2.3. </b>Вызов окна Settings настройки параметров проекта</p>
+<p>В левой части открывшегося окна настроек выберите опцию <b>Project
+	Interpreter</b>, при этом в правой части окна будет показана информация
+	об интерпретаторе языка Python и подключенных к нему библиотеках
+	(рис. 2.4.).</p>
+<img src="https://sun9-west.userapi.com/sun9-71/s/v1/ig2/6rKZ9lGoP8JN0lgq-qAYBMEn13ycy-AA5RbHqGPOw8RfpuBg71O6aoB8_nDFo3wMbg73xgbC74O2P9-rvZde24v-.jpg?size=590x338&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 2.4. </b>Информация об интерпретаторе языка Python</p>
+<p>Чтобы добавить новую библиотеку, нужно нажать на значок "+"
+	в правой части окна, после чего будет отображен полный список
+	доступных библиотек. Здесь можно либо пролистать весь список
+	и найти библиотеку Kivy, либо набрать наименование этой библиотеки
+	в верхней строке поиска, и она будет найдена в списке (рис. 2.5.).
+	</p>
+	<img src="https://sun9-north.userapi.com/sun9-87/s/v1/ig2/O6j4sCdZV4Wsi_G9YGoXz3ogFqHb1bMNEnizHcMijnnmxB7mwlj8wF5uHXfjgcdQS4_GI8HY4Hxobj4PRfr3jUK-.jpg?size=588x476&quality=96&type=album">
+	<p style="text-align:center"><b>Рис. 2.5. </b>Поиск библиотеки Kivy в списке доступных библиотек</p>
+	<p>Нажмите на кнопку <b>Install Package</b>, после этого выбранная
+		библиотека и сопровождающие ее модули будут добавлены в ваш
+		проект (рис. 2.6.)</p>
+		<img src="https://sun9-east.userapi.com/sun9-41/s/v1/ig2/F7aPx4w7ZFGhvcESj6mTy5b06-Np-rsutfGjBshCsPyujIN-r4zcd5bGD5wL0RmHLj8SoWkoYmQ5OQFWp_iGqVtu.jpg?size=592x459&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 2.6. </b>Библиотека Kivy добавлена в список подключенных библиотек</p>
+<p>Аналогичные действия выполним с библиотекой KivyMD. Чтобы
+	добавить эту библиотеку, нужно нажать на значок "+" в правой части
+	окна, после чего будет отображен полный список доступных
+	библиотек. Здесь можно либо пролистать весь список и найти
+	библиотеку kivymd, либо набрать наименование этой библиотеки
+	в верхней строке поиска, и она будет найдена в списке (рис. 2.7.).
+	</p>
+<img src="https://sun9-east.userapi.com/sun9-59/s/v1/ig2/x-aqt2KX7KJaLqEjOxRq9jErgwtdb6v986p0TFYIehHvryqW7qbtIlnrg48X_IS0mOVsu9XmC1GVnsyFFmQGcHkP.jpg?size=591x201&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 2.7.</b>Поиск библиотеки KivyMD в списке доступных библиотек</p>
+<p>Нажмите на кнопку <b>Install Package</b>, после этого выбранная
+	библиотека будет добавлена в ваш проект (рис. 2.8.).</p>
+<img src="https://sun9-west.userapi.com/sun9-52/s/v1/ig2/FaCoykMCR7idQKiZJOlOQQDm3_sBHAvC-Bm_pEspnMMmeMVVh9XI7wTtboQ0MO6Fast2nuLlU15m3Qm_qJrEzMYB.jpg?size=590x319&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 2.8. </b>Библиотека KivyMD добавлена в список подключенных библиотек</p>
+<p>Для установки вышеназванных пакетов вторым способом
+	(с использование диспетчера пакетов pip) достаточно войти в окно
+	терминала среды PyCharm. Для подключения пакета Kivy, набрать
+	команду- pip install kivy (рис. 2.9.), и нажать клавишу Enter.
+	</p>
+	<img src="https://sun9-west.userapi.com/sun9-38/s/v1/ig2/LWNmve2ziZz_ONbvnZNRHweSLWyo_s9rDj02Qkg5kIxbEAzdcDPG7oMHes2DcH4blZmmw5D4DW_UpY9Lsc3KsW2g.jpg?size=530x122&quality=96&type=album">
+	<p style="text-align:center"><b>Рис. 2.9. </b>Добавление библиотек Kivy в список подключенных библиотек в окне терминала
+		PyCharm
+		</p>
+		<p>Аналогично, для подключения пакета KivyMD в окне терминала
+			среды PyCharm нужно набрать команду – pip install kivymd (рис. 3.0),
+			и нажать клавишу Enter.
+			</p>
+<img src="https://sun9-east.userapi.com/sun9-24/s/v1/ig2/aBcQuY_7oKu5ZkHjlzNLzbh4f7PsUH4rUnN321nwZa_PenJeT6QLU9dtpgC8BD8fNx94GWsg_JESHHu4GvrsTB8c.jpg?size=518x123&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 3.0. </b>Добавление библиотек KivyMD в список подключенных библиотек в окне терминала
+	PyCharm</p>
+	<p>После этих действий все необходимые компоненты будут
+		подключены к созданному проекту.
+		</p>
+		<p><b>Примечание.</b>
+			<br>
+			Следует обратить внимание, что некоторые из требуемых
+			зависимостей могут быть не включены в устанавливаемый пакет
+			(это зависит от типа и версии операционной системы вашего
+			компьютера и от версии Python). Если возникнут проблемы при
+			запуске написанных программных модулей, то вы можете
+			использовать следующие дополнительные команды для
+			установки необходимых отсутствующих библиотек, чтобы
+			исправить возникающие ошибки:<br>
+			pip install kivy-deps.angle;<br>
+			pip install kivy-deps.glew;<br>
+			pip install kivy-deps.gstreamer;<br>
+			pip install kivy-deps.sdl2.<br>
+			Теперь у нас есть минимальный набор инструментальных средств,
+			который необходим для разработки мобильных приложений на языке
+			Python. Впрочем, в процессе рассмотрения конкретных примеров нам
+			понадобится загрузка еще ряда дополнительных пакетов и библиотек.
+			Их описание и процедуры подключения будут представлены
+			в последующих главах.</p>
+	
+</div>
+		</div>
+    </div>
+	<div id="bottom">
+		<a href="topic2-3.html" class="buttons"><button class="button">Назад<span class="buttonhelp">Использование менеджера пакетов pip</span></button></a>	
+		<a href="content.html" class="buttons"><button class="button">К содержанию<span class="buttonhelp">Перейти к перечню заголовков</span></button></a>
+		<a href="topic2-5.html" class="buttons"><button class="button">Далее<span class="buttonhelp">Первые приложения на Kivy и KivyMD</span></button></a>	
+		<hr><p>Обучение кроссплатформенному программированию</p>
+	</div> 	
+ </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("body").css("display", "none");
+      	    $("body").fadeIn(300);
+	
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(300, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}    
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#back-top').fadeIn();
+				} else {
+					$('#back-top').fadeOut();
+				}
+			});
+			
+			$('#back-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>

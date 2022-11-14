@@ -1,0 +1,127 @@
+<script type="text/javascript">
+	// для плавной смены контента
+    $(document).ready(function() {
+      	$("body").css("display", "none");
+    });
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="shortcut icon" type="image/ico" href="../images/favicon.png"/>
+  <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+  <script type="text/javascript" src="../js/prefixfree-1.0.7.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+	Содержание
+  </title>
+  <link href="../css/mystylecontent.css" rel="stylesheet">
+  <!-- подключение локальной базы данных -->
+  <!-- <script type="text/javascript" src="../js/localdb.js"></script> -->
+ </head>
+ <body>
+	<div class="class">
+		<div id="back-top"><a href="#top"><img src="../images/uparrow.png" style="width: 50px; height: 80px;" alt=""></a></div>
+	</div>
+	<div id="head">
+		<a href="../index.html">На главную</a>
+		
+	</div> 
+	<div id="article">
+		<div class="parent">
+			<div class="child">
+				<h1 class="boxShadow10">Содержание</h1>				
+				<br>
+				<ol>
+					<li class="topic">Инструментальные средства для разработки кроссплатформенных приложений на Python
+						<ol>
+							 <a href="topic1-1.html"><li class="notopic">Мобильные приложения</li></a>
+							 <a href="topic1-2.html"><li class="notopic">Интерпретатор Python</li></a>
+							 <a href="topic1-3.html"><li class="notopic">Установка Python в Windows</li></a>
+							 <a href="topic1-4.html"><li class="notopic">Установка Python в Linux</li></a>
+							 <a href="topic1-6.html"><li class="notopic">Проверка интерпретатора Python</li></a>		 
+							 <a href="../presentations/topic1_7/show.html"><li class="notopic">Презентация по теме</li></a>
+							 
+							 <a href="../tests/topic1_8/show.html"><li class="notopic">Проверка степени усвоения материала: промежуточный тест</li></a>
+							 
+						</ol>
+					</li>					
+					<li class="topic">
+						Инструментарий для загрузки в Python
+пакетов программных средств
+
+						<ol>
+							 <a href="topic2-1.html"><li class="notopic">Репозиторий пакетов программных
+средств PyPI
+</li></a>
+							 <a href="topic2-2.html"><li class="notopic">Менеджер пакетов в Python – pip</li></a>
+							 <a href="topic2-3.html"><li class="notopic">Использование менеджера пакетов pip</li></a>
+							 <a href="topic2-4.html"><li class="notopic">Загрузка фреймворка Kivy и библиотеки
+KivyMD</li></a>
+							 <a href="topic2-5.html"><li class="notopic">Первые приложения на KIVY и KIVYMD</li></a>
+							 <a href="../presentations/topic2_6/show.html"><li class="notopic">Презентация по теме</li></a>
+							 <a href="../tests/topic2_7/show.html"><li class="notopic">Проверка степени усвоения материала: промежуточный тест</li></a>
+							
+						</ol>
+					</li>
+					<li class="topic">
+						Фреймоворк Kivy, язык KV
+и виджеты, как основа
+пользовательского интерфейса
+						<ol>
+							 <a href="topic3-1.html"><li class="notopic">Общее представление о фрейморке Kivy</li></a>
+							 <a href="topic3-2.html"><li class="notopic">Язык KV и его особенности</li></a>
+							 <a href="topic3-3.html"><li class="notopic">Классы и объекты</li></a>
+							 <a href="topic3-4.html"><li class="notopic">Динамические классы</li></a>
+							 <a href="../presentations/topic3_5/show.html"><li class="notopic">Презентация по теме</li></a>
+							 <a href="../tests/topic3_6/show.html"><li class="notopic">Проверка степени усвоения материала: промежуточный тест</li></a>
+							 
+						</ol>
+					</li>
+					
+				</ol>				
+			</div>
+			<div class="helper"></div>
+		</div>
+    </div>
+	<div id="bottom">
+		<hr><p>Обучение кроссплатформенному программированию</p>
+	</div> 	
+ </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("body").css("display", "none");
+      	    $("body").fadeIn(300);
+	
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(300, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}    
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#back-top').fadeIn();
+				} else {
+					$('#back-top').fadeOut();
+				}
+			});
+			
+			$('#back-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>

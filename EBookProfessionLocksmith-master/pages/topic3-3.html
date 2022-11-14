@@ -1,0 +1,224 @@
+<script type="text/javascript">
+	// для плавной смены контента
+    $(document).ready(function() {
+      	$("body").css("display", "none");
+    });
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="shortcut icon" type="image/ico" href="../images/favicon.png"/>
+  <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+	3.3 Классы и объекты
+  </title>
+  <link href="../css/mystylecontent.css" rel="stylesheet">
+  <!-- подключение локальной базы данных -->
+  <!-- <script type="text/javascript" src="../js/localdb.js"></script> -->
+ </head>
+ <body>
+	<div class="class">
+		<div id="back-top"><a href="#top"><img src="../images/uparrow.png" style="width: 50px; height: 80px;" alt=""></a></div>
+	</div>
+	<div id="head">
+		<a href="../index.html">На главную</a>
+		<a href="content.html">Содержание</a>
+	</div> 
+	<div id="article">
+		<div class="parent">
+			<div class="child">
+				<h1 class="boxShadow10">3.3 Классы и объекты</h1>	
+				<br>	
+				<p>По мере того, как приложение усложняется, становится трудно
+					поддерживать конструкцию дерева виджетов и явное объявление
+					привязок. Чтобы преодолеть эти недостатки, альтернативой является
+					язык KV, также известный как язык Kivy или KVlang. Язык KV
+					позволяет создавать дерево виджетов в декларативной манере,
+					позволяет очень быстро создавать прототипы и оперативно вносить
+					изменения в пользовательский интерфейс. Это также помогает
+					отделить логику приложения от пользовательского интерфейса.<br></p>
+					<p>Язык KV, как и Python, является объектно-ориентированным
+					языком. Все элементы интерфейса представляют собой объекты,
+					которые строятся на основе базовых классов. Каждый класс имеет
+					набор свойств, зарезервированных методов и событий, которые могут
+					быть обработаны с помощью функций. В языке KV принято
+					соглашение: имя класса всегда начинается с заглавной буквы
+					(например, Button – кнопка, Label – метка), а имя свойства с маленькой
+					буквы (например, text, text_size, font_size).<br></p>
+					<p>Самый простой способ использования классов в KV – это
+					употребление их оригинальных имен. Проверим это на простом
+					примере. Создадим файл с именем K_May_Class1.py и напишем в нем
+					следующий код (листинг 2.1).<br></p>
+					<p>
+					<b>Листинг 2.1. Пример использования базового класса
+					(модуль K_My_Class1.py)</b><br>
+					# модуль K_May_Class1.py<br>
+					from kivy. app import App<br>
+					from kivy.lang import Builder<br>
+					KV =«»»<br>
+					BoxLayout: # контейнер (базовый класс BoxLayout)<br>
+					……Button: # кнопка (класс Button)<br>
+					…… … … text: «Кнопка 1» # свойство кнопки (надпись)<br>
+					«»»<br>
+					class MainApp (App):<br>
+					…… def build (self):<br>
+…… … … return Builder. load_string (KV)<br>
+MainApp().run ()<br></p>
+<p><b>
+Примечание.</b></p>
+<p>Мы еще не знакомились с виджетами Kivy, а в этом коде
+используется два виджета: видимый виджет Button (кнопка),
+и виджет – контейнер BoxLayout (коробка). Более подробно о них
+будет сказано в последующих разделах. А пока будем
+использовать их в своих примерах. В листинге присутствуют
+тройные кавычки – «»», в редакторе программного кода вместо
+них нужно использовать тройной апостроф – «'''».<br></p>
+<p>
+В этом коде в текстовой переменной KV создан виджет – контейнер
+на основе базового класса BoxLayout, в нем размещена кнопка
+(Button), свойству кнопки text присвоено значение «Кнопка 1»
+(на языке KV свойство от его значения отделяется знаком двоеточия
+«:»). При этом нет необходимости явно импортировать базовые
+классы, они загрузятся автоматически. После запуска приложения
+получим следующий результат (рис.3.8).
+
+					</p>
+					<img src="https://sun9-west.userapi.com/sun9-56/s/v1/ig2/LBzGZO7JRfNBukIqoqIwmVKbIUMmEFP6GKlr7ezX0djPTrsb5mEGHABBFQDriqobjeYYhn-o-UPwJ5I38ntW3OqP.jpg?size=120x185&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 3.8. </b>Результаты выполнения приложения из модуля K_May_Class1.py</p>
+<p>В этом примере мы косвенно познакомились с виджетом –
+	контейнером BoxLayout и простейшим деревом виджетов. Здесь
+	в виджет – контейнер была помещена кнопка. Более подробно
+	виджеты – контейнеры будут рассмотрены в последующих разделах.</p>
+	<p>
+	Разработчик может в коде на Python переопределить имя базового
+	класса, то есть создать собственный пользовательский класс.
+	Например, разработчик хочет использовать класс BoxLayout, но при
+	этом дать ему другое имя, например, MyBox. Проверим это на простом
+	примере. Создадим файл с именем K_May_Class2.py и напишем в нем
+	следующий код (листинг 2.2).</p>
+	<p><b>Листинг 2.2. Пример использования пользовательского
+		класса (модуль K_My_Class2.py)
+		</b></p>
+		<p># модуль K_May_Class2.py<br>
+			from kivy. app import App<br>
+			from kivy.lang import Builder<br>
+			from kivy.uix.boxlayout import BoxLayout<br>
+			KV = «»»<br>
+			MyBox: # контейнер (пользовательский класс)<br>
+			……Button: # кнопка (класс Button)<br>
+			…… … …text: «Кнопка 2» # свойство кнопки (надпись
+			на кнопке)<br>
+			«»»<br>
+			# пользовательский класс MyBox<br>
+			# на основе базового класса BoxLayout<br>
+			class MyBox (BoxLayout):<br>
+			…… pass<br>
+			class MainApp (App):<br>
+			…… def build (self):<br>
+			…… … … return Builder. load_string (KV)<br>
+			MainApp().run ()<br>
+			</p>
+			<p>В этом программном коде на языке Python создан пользовательский
+				класс MyBox на основе базового класса BoxLayout. При этом нужно
+				явно выполнить импорт базового класса BoxLayout:
+				from kivy.uix.boxlayout import BoxLayout
+				После запуска приложения получим следующий результат (рис.3.9).</p>
+				<img src="https://sun9-east.userapi.com/sun9-17/s/v1/ig2/4m_2RJAsoBOzRaoE8hFmimHSJ_wCAnrSHuhzJMpC5cXRFMciDb9eDwEgn0QaD1wdezfLk6JtYpgMH3HuUUeuhmdE.jpg?size=117x184&quality=96&type=album">
+				<p style="text-align:center"><b>Рис. 3.9. </b>Результаты выполнения приложения из модуля K_May_Class2.py
+				</p>
+				<p>Однако есть более простой способ создания пользовательского
+					класса непосредственно в коде на языке KV. Для этого используется
+					следующая конструкция:
+					</p>
+					<p><Имя_пользовательского_класса@Имя_базового_класса>
+						Проверим это на простом примере. Создадим файл с именем
+						K_May_Class3.py и напишем в нем следующий код (листинг 2.3).
+						</p>
+						<p><b>Листинг 2.3. Пример использования пользовательского
+							класса (модуль K_My_Class3.py)</b></p>
+							<p># модуль K_May_Class3.py<br>
+								from kivy. app import App<br>
+								from kivy.lang import Builder<br>
+								KV = «»»<br>
+								# пользовательский класс MyBox<br>
+								# на основе базового класса BoxLayout<br>
+								<MyBox@BoxLayout><br>
+									MyBox: # контейнер (пользовательский класс)<br>
+									…… Button: # кнопка (класс Button)<br>
+									…… … … text: «Кнопка 3» # свойство кнопки (надпись
+									на кнопке)<br>
+									«»»<br>
+									class MainApp (App):<br>
+									…… def build (self):<br>
+									…… … … return Builder. load_string (KV)<br>
+									MainApp().run ()<br>
+									</p>
+									<p>В этом программном коде пользовательский класс MyBox на основе
+										базового класса BoxLayout создан непосредственно в коде на KV:<br></p>
+										<p> MyBox@BoxLayout'</p>
+										<p>При этом не нужно явно выполнить импорт базового класса
+											BoxLayout, и не нежно объявлять пользовательский класс в разделе
+											программы на Python. При этом сам программный код получается
+											компактным и более понятным.
+											</p>
+											<p><b>Примечание.</b></p>
+											<p>В этом случае строка, в которой сформирован
+												пользовательский класс, должна находиться между
+												символами <…>.
+												</p>
+												<p>После запуска приложения получим следующий результат (рис.4.0).
+												</p>
+												<img src="https://sun9-east.userapi.com/sun9-22/s/v1/ig2/aAXZQuvDvqrFYZepTyfavU4YhHfk6xuuHRlquCjD5SdkaWtgrrvmewH1HEwgm1C1NtvmDGk5iDeNqeYxZBw5XEcW.jpg?size=122x189&quality=96&type=album">
+												<p style="text-align:center"><b>Рис. 4.0. </b>Результаты выполнения приложения из модуля
+													K_May_Class3.py		
+												</p>
+
+			</div>
+		</div>
+    </div>
+	<div id="bottom">
+		<a href="topic3-2.html" class="buttons"><button class="button">Назад<span class="buttonhelp">Язык KV и его особенности</span></button></a>	
+		<a href="content.html" class="buttons"><button class="button">К содержанию<span class="buttonhelp">Перейти к перечню заголовков</span></button></a>
+		<a href="topic3-4.html" class="buttons"><button class="button">Далее<span class="buttonhelp">Динамические классы</span></button></a>	
+		<hr><p>Обучение кроссплатформенному программированию</p>
+	</div> 	
+ </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("body").css("display", "none");
+      	    $("body").fadeIn(300);
+	
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(300, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}    
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#back-top').fadeIn();
+				} else {
+					$('#back-top').fadeOut();
+				}
+			});
+			
+			$('#back-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>

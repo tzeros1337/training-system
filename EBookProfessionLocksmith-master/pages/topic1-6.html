@@ -1,0 +1,107 @@
+<script type="text/javascript">
+	// для плавной смены контента
+    $(document).ready(function() {
+      	$("body").css("display", "none");
+    });
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="shortcut icon" type="image/ico" href="../images/favicon.png"/>
+  <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+	1.5 Проверка интерпретатора Python
+  </title>
+  <link href="../css/mystylecontent.css" rel="stylesheet">
+  <!-- подключение локальной базы данных -->
+  <!-- <script type="text/javascript" src="../js/localdb.js"></script> -->
+ </head>
+ <body>
+	<div class="class">
+		<div id="back-top"><a href="#top"><img src="../images/uparrow.png" style="width: 50px; height: 80px;" alt=""></a></div>
+	</div>
+	<div id="head">
+		<a href="../index.html">На главную</a>
+		<a href="content.html">Содержание</a>
+	</div> 
+	<div id="article">
+		<div class="parent">
+			<div class="child">
+				<h1 class="boxShadow10">1.5 Проверка интерпретатора Python</h1>
+				<br>
+				<div class="container">
+					<div class="box">				
+						<p>Для начала протестируем интерпретатор в командном режиме. Если
+вы работаете в Windows, то нажмите комбинацию клавиш Win +
+R и в открывшемся окне введите: python. В Linux откройте окно
+терминала и в нем введите: python3 (или python).
+В результате Python запустится в командном режиме. Выглядеть это
+будет примерно так, как показано на рис. 1.6 (иллюстрация приведена
+для Windows, в Linux результат будет аналогичным).</p>
+<img src="https://sun9-west.userapi.com/sun9-9/s/v1/ig2/1bD9msIAqgrZnMnmKJZpzDQTv6CqEXggqreUtCQtcHuIR3GmfhvAHW9tAGkYwMSd6SPV_P9Usd8DDCraNLv008Mv.jpg?size=587x295&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 1.6.</b>Результат запуска интерпретатора Python в окне терминала</p>
+<p>В этом окне введите программный код следующего содержания:
+print («Hello, World!»)
+В результате вы увидите следующий ответ (рис. 1.7).</p>
+<img src="https://sun9-west.userapi.com/sun9-7/s/v1/ig2/LXf7YeP677uD1uiKOKuTyvHtQvtqj_XSGN2_fHHMe9T9KQZGlhsbPSgRqXWNtHLJZt6xdU4Alsal93EBLo4tG5fU.jpg?size=587x290&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 1.7.</b>Результат работы программы на Python в окне терминала</p>
+<p>Получение такого результата означает, что установка интерпретатора
+Python прошла без ошибок.
+</p>
+
+							
+								
+													
+							</p>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	<div id="bottom">
+		<a href="topic1-4.html" class="buttons"><button class="button">Назад<span class="buttonhelp">Установка Python в Linux</span></button></a>	
+		<a href="content.html" class="buttons"><button class="button">К содержанию<span class="buttonhelp">Перейти к перечню заголовков</span></button></a>
+		<a href="../presentations/topic1_7/show.html" class="buttons"><button class="button">Далее<span class="buttonhelp">Презентация</span></button></a>	
+		<hr><p>Обучение кроссплатформенному программированию</p>
+	</div> 	
+ </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("body").css("display", "none");
+      	    $("body").fadeIn(300);
+	
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(300, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}    
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#back-top').fadeIn();
+				} else {
+					$('#back-top').fadeOut();
+				}
+			});
+			
+			$('#back-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>

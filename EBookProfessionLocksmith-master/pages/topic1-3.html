@@ -1,0 +1,140 @@
+<script type="text/javascript">
+	// для плавной смены контента
+    $(document).ready(function() {
+      	$("body").css("display", "none");
+    });
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="shortcut icon" type="image/ico" href="../images/favicon.png"/>
+  <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+	1.3 Установка Python в Window
+  </title>
+  <link href="../css/mystylecontent.css" rel="stylesheet">
+  <!-- подключение локальной базы данных -->
+  <!-- <script type="text/javascript" src="../js/localdb.js"></script> -->
+ </head>
+ <body>
+	<div class="class">
+		<div id="back-top"><a href="#top"><img src="../images/uparrow.png" style="width: 50px; height: 80px;" alt=""></a></div>
+	</div>
+	<div id="head">
+		<a href="../index.html">На главную</a>
+		<a href="content.html">Содержание</a>
+	</div> 
+	<div id="article">
+		<div class="parent">
+			<div class="child">
+				<h1 class="boxShadow10">1.3 Установка Python в Windows</h1>
+				<br>	
+				<p>Для операционной системы Windows дистрибутив Python
+распространяется либо в виде исполняемого файла (с расширением
+exe), либо в виде архивного файла (с расширением zip). На момент
+подготовки этой книги была доступна версия Python 3.8.3.
+</p>
+<p align="justify">Порядок установки Python в Windows следующий:</p>
+<p align="justify">– Запустите скачанный установочный файл.</p>
+<p align="justify">– Выберите способ установки (рис. 1.2).</p>
+<img src="https://sun9-north.userapi.com/sun9-80/s/v1/ig2/IhivF7Rshh-b3X4Coh7DlAgFA5m-Soy2P3KMMaQo0YtHS1XypgMweZDITLrOiHrotRmDi9yFjKirlSjt0QWg0TGx.jpg?size=596x373&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 1.2.</b> Выбор способа установки Python</p>
+<p>В открывшемся окне предлагаются два варианта: <b>Install Now</b>
+и <b>Customize installation</b>:
+<p align="justify">– при выборе <b>Install Now</b> Python установится в папку по указанному
+в окне пути. Помимо самого интерпретатора будут инсталлированы
+IDLE (интегрированная среда разработки), pip (пакетный менеджер)
+и документация, а также созданы соответствующие ярлыки
+и установлены связи (ассоциации) файлов, имеющих расширение py,
+с интерпретатором Python;</p>
+<p align="justify">– <b>Customize installation</b> – это вариант настраиваемой установки.
+Опция <b>Add Python 3.8 to PATH</b> нужна для того, чтобы появилась
+возможность запускать интерпретатор без указания полного пути
+до исполняемого файла при работе в командной строке.</p>
+<p align="justify">– Отметьте необходимые опции установки, как показано на рис.
+1.3 (доступно при выборе варианта <b>Customize installation</b>).</p>
+<img src="https://sun9-east.userapi.com/sun9-23/s/v1/ig2/qO8QSiISPBuL3gZ5-rJj-CJ4eJ1v36e8ebAJ8-4sjCey6koWvxh90z2WSZkui3RKUXlEATUL6DWU9rbqo0HHhAs2.jpg?size=587x358&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 1.3.</b> Выбор опций установки Python</p>
+<p align="justify">На этом шаге нам предлагается отметить дополнения,
+устанавливаемые вместе с интерпретатором Python. Рекомендуется
+выбрать как минимум следующие опции:</p>
+<p align="justify">– Documentation – установка документации;</p>
+<p align="justify">– pip – установка пакетного менеджера pip;</p>
+<p align="justify">– tcl/tk and IDLE – установка интегрированной среды разработки (IDLE) и библиотеки для построения графического интерфейса(tkinter).</p>
+
+<p align="justify">– На следующем шаге в разделе Advanced Options
+(Дополнительные опции) выберите место установки, как показано
+на рис. 1.4 (доступно при выборе варианта Customize installation).</p>
+<img src="https://sun9-east.userapi.com/sun9-33/s/v1/ig2/7I5wFD60lRbj6KNSy3q1U4F-nizwCCVbNeEBPEs3frTPcJR7_nS473f1U5kwsA8iKXke8ahbY3SwSP4Hv-t80yrs.jpg?size=590x365&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 1.4.</b> Выбор места установки Python</p>
+<p align="justify">Помимо указания пути, этот раздел позволяет внести
+дополнительные изменения в процесс установки с помощью опций:</p>
+<p align="justify">– Install for all users – установить для всех пользователей. Если
+не выбрать эту опцию, то будет предложен вариант инсталляции
+в папку пользователя, устанавливающего интерпретатор;</p>
+<p align="justify">– Associate files with Python – связать файлы, имеющие расширение
+py, с Python. При выборе этой опции будут внесены изменения
+в Windows, позволяющие Python запускать скрипты по двойному
+щелчку мыши;</p>
+<p align="justify">– Create shortcuts for installed applications – создать ярлыки для
+запуска приложений;</p>
+<p align="justify">– Add Python to environment variables – добавить пути
+до интерпретатора Python в переменную PATH;</p>
+<p align="justify">– Precomple standard library – провести перекомпиляцию
+стандартной библиотеки.</p>
+<p align="justify">Последние два пункта связаны с загрузкой компонентов для отладки,
+их мы устанавливать не будем.</p>
+<p align="justify">– После успешной установки Python вас ждет следующее сообщение
+(рис. 1.5).</p>
+<img src="https://sun9-west.userapi.com/sun9-46/s/v1/ig2/Cia_ol5O3xqsjS46guTkBJMViaP_XB2gtn_quEiA8bLUKdrrFeuv9NCU2DCFdPH0OonrYiywm3sPGNDUHqyT0OMw.jpg?size=589x368&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 1.5.</b> Финальное сообщение после установки Python</p>
+			</div>
+		
+		</div>
+    </div>
+	<div id="bottom">
+		<a href="topic1-2.html" class="buttons"><button class="button">Назад<span class="buttonhelp">Интерпретатор Python</span></button></a>	
+		<a href="content.html" class="buttons"><button class="button">К содержанию<span class="buttonhelp">Перейти к перечню заголовков</span></button></a>
+		<a href="topic1-4.html" class="buttons"><button class="button">Далее<span class="buttonhelp">Установка Python в Linux</span></button></a>	
+		<hr><p>Обучение кроссплатформенному программированию</p>
+	</div> 	
+ </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("body").css("display", "none");
+      	    $("body").fadeIn(300);
+	
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(300, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}    
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#back-top').fadeIn();
+				} else {
+					$('#back-top').fadeOut();
+				}
+			});
+			
+			$('#back-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>

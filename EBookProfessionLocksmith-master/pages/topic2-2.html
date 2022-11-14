@@ -1,0 +1,106 @@
+<script type="text/javascript">
+	// для плавной смены контента
+    $(document).ready(function() {
+      	$("body").css("display", "none");
+    });
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="shortcut icon" type="image/ico" href="../images/favicon.png"/>
+  <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+	2.2 Менеджер пакетов в Python – pip
+  </title>
+  <link href="../css/mystylecontent.css" rel="stylesheet">
+  <!-- подключение локальной базы данных -->
+  <!-- <script type="text/javascript" src="../js/localdb.js"></script> -->
+ </head>
+ <body>
+	<div class="class">
+		<div id="back-top"><a href="#top"><img src="../images/uparrow.png" style="width: 50px; height: 80px;" alt=""></a></div>
+	</div>
+	<div id="head">
+		<a href="../index.html">На главную</a>
+		<a href="content.html">Содержание</a>
+	</div> 
+	<div id="article" style="height: 830px;">
+		<div class="parent">
+			<div class="child">
+				<h1 class="boxShadow10">2.2 Менеджер пакетов в Python – pip</h1>	
+				<br>
+				<p>Менеджер пакетов pip – это консольная утилита (без графического
+интерфейса). После того, как вы ее скачаете и установите, она
+пропишется в PATH и будет доступна для использования. Эту утилиту
+можно запускать как самостоятельно – например, через терминал
+в Windows или Linux, а также в терминальном окне PyCharm
+командой:
+<p align="justify">> pip аргументы
+pip можно запустить и через интерпретатор Python:
+> python -m pip аргументы
+Ключ -m означает, что мы хотим запустить модуль (в нашем случае
+pip).</p>
+<p align="justify">При развертывании современной версии Python (начиная с Python
+2.7.9 и более поздних версий), pip устанавливается автоматически.
+В PyCharm проверить наличие модуля pip достаточно просто – для
+этого нужно войти в настройки проекта через меню <b>File | Settings |
+Project Interpreter.</b> Модуль pip должен присутствовать в списке
+загруженных пакетов и библиотек .</p>
+<p align="justify">Проверка наличия в проекте модуля pip
+В случае отсутствия в списке этого модуля последнюю его версию
+можно загрузить, нажав на значок + в правой части окна и выбрав
+модуль pip из списка.
+</p>
+					
+					
+							
+			</div>
+		</div>
+    </div>
+	<div id="bottom">
+		<a href="topic2-1.html" class="buttons"><button class="button">Назад<span class="buttonhelp">Репозиторий пакетов программных
+средств PyPI</span></button></a>	
+		<a href="content.html" class="buttons"><button class="button">К содержанию<span class="buttonhelp">Перейти к перечню заголовков</span></button></a>
+		<a href="topic2-3.html" class="buttons"><button class="button">Далее<span class="buttonhelp">Использование менеджера пакетов pip</span></button></a>	
+		<hr><p>Обучение кроссплатформенному программированию</p>
+	</div> 	
+ </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("body").css("display", "none");
+      	    $("body").fadeIn(300);
+	
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(300, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}    
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#back-top').fadeIn();
+				} else {
+					$('#back-top').fadeOut();
+				}
+			});
+			
+			$('#back-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>

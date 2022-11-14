@@ -1,0 +1,158 @@
+<script type="text/javascript">
+	// для плавной смены контента
+    $(document).ready(function() {
+      	$("body").css("display", "none");
+    });
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="shortcut icon" type="image/ico" href="../images/favicon.png"/>
+  <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+	3.4 Динамические классы
+  </title>
+  <link href="../css/mystylecontent.css" rel="stylesheet">
+  <!-- подключение локальной базы данных -->
+  <!-- <script type="text/javascript" src="../js/localdb.js"></script> -->
+ </head>
+ <body>
+	<div class="class">
+		<div id="back-top"><a href="#top"><img src="../images/uparrow.png" style="width: 50px; height: 80px;" alt=""></a></div>
+	</div>
+	<div id="head">
+		<a href="../index.html">На главную</a>
+		<a href="content.html">Содержание</a>
+	</div> 
+	<div id="article">
+		<div class="parent">
+			<div class="child">
+				<h1 class="boxShadow10">3.4 Динамические классы</h1>	
+				<br>
+				<p>Пользовательский класс в Kivy еще называют динамическим
+					классом. Динамический класс создается на основе базового класса,
+					при этом для него можно сразу определить свой набор свойств.
+					Например, в контейнере BoxLayout имеется три кнопки, для которых
+					заданы идентичные свойства:
+					</p>
+					<p>BoxLayout:<br>
+						…… Button:<br>
+						…… … … text: «Кнопка 1»<br>
+						…… … … pos_hint: {’center_x’:.5, ’center_y’:.6}<br>
+						…… … … font_size: ’25sp’<br>
+						…… … … markup: True<br>
+						…… Button:<br>
+						…… … … text: " Кнопка 2»<br>
+						…… … … pos_hint: {’center_x’:.5, ’center_y’:.6}<br>
+						…… … … font_size: ’25sp’<br>
+						…… … … markup: True<br>
+						…… Button:<br>
+						…… … … text: " Кнопка 3»<br>
+						…… … … pos_hint: {’center_x’:.5, ’center_y’:.6}<br>
+						…… … … font_size: ’25sp’<br>
+						…… … … markup: True<br>
+						</p>
+						<p>Для того чтобы не повторять многократно задание одних и тех же
+							свойств каждому элементу, можно сформировать динамический класс
+							и в нем один раз задать этот набор свойств:</p>
+							<p>MyButton@Button:<br>
+								…… pos_hint: {’center_x’:.5, ’center_y’:.6}<br>
+								…… font_size: ’25sp’<br>
+								…… markup: True<br>
+								BoxLayout:<br>
+								…… MyButton:<br>
+								…… … … text: " Кнопка 1»<br>
+…… MyButton:<br>
+…… … … text: " Кнопка 2»<br>
+…… MyButton:<br>
+…… … … text: " Кнопка 3»<br>
+								</p>
+								<p>Не вдаваясь в смысл этих свойств, проверим это на простом
+									примере. Создадим файл с именем K_May_Class4.py и напишем в нем
+									следующий код (листинг 2.4).
+									</p>
+									<p><b>Листинг 2.4. Пример использования динамического класса
+										(модуль K_My_Class4.py)
+										</b></p>
+										<p># модуль K_May_Class4.py<br>
+											from kivy. app import App<br>
+											from kivy.lang import Builder<br>
+											KV = «»»<br>
+											MyButton@Button:<br>
+											…… font_size: ’25sp’<br>
+											…… pos_hint: {’center_x’:.5, ’center_y’:.6}<br>
+											…… markup: True<br>
+											BoxLayout:<br>
+											…… orientation: «vertical»<br>
+											…… MyButton:<br>
+											…… … … text: " Кнопка 1»<br>
+											…… MyButton:<br>
+											…… … … text: " Кнопка 2»<br>
+											….. MyButton:<br>
+											…… … … text: " Кнопка 3»<br>
+											«»»<br>
+											class MainApp (App):<br>
+											…… def build (self):<br>
+											…… … … return Builder. load_string (KV)<br>
+											MainApp().run ()<br></p>
+											<p>В этом программном коде создан динамический класс MyButton
+												на основе базового класса Button. Для класса MyButton один раз
+												заданы три свойства. Затем в контейнер BoxLayout, помещаются три
+												кнопки MyButton, для которых задается всего одно свойство – text. Все
+												остальные свойства этих кнопок будут наследованы от динамического
+												класса MyButton@Button. Таким образом, программный код
+												упрощается и сокращается количество строк. После запуска
+												приложения получим следующий результат (рис.4.1).
+												</p>
+												<img src="https://sun9-east.userapi.com/sun9-28/s/v1/ig2/C8msypQoY2-O2_UQGtPBsyL8ZDSVdhjg15s_j1UmoMWViaNsHU2ZYOxD806xb_6mI38Eo8Y4gTi8Lcp7u-QWFCFs.jpg?size=136x236&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 4.1. </b> Результаты выполнения приложения из модуля
+	K_May_Class3.py</p>
+			</div>
+		</div>
+    </div>
+	<div id="bottom">
+		<a href="topic3-3.html" class="buttons"><button class="button">Назад<span class="buttonhelp">Классы и объекты</span></button></a>	
+		<a href="content.html" class="buttons"><button class="button">К содержанию<span class="buttonhelp">Перейти к перечню заголовков</span></button></a>
+		<a href="../presentations/topic3_5/show.html" class="buttons"><button class="button">Далее<span class="buttonhelp">Презентация</span></button></a>	
+		<hr><p>Обучение кроссплатформенному программированию</p>
+	</div> 	
+ </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("body").css("display", "none");
+      	    $("body").fadeIn(300);
+	
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(300, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}    
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#back-top').fadeIn();
+				} else {
+					$('#back-top').fadeOut();
+				}
+			});
+			
+			$('#back-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>

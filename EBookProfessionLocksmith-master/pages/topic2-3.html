@@ -1,0 +1,132 @@
+<script type="text/javascript">
+	// для плавной смены контента
+    $(document).ready(function() {
+      	$("body").css("display", "none");
+    });
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="shortcut icon" type="image/ico" href="../images/favicon.png"/>
+  <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+	 2.3 Использование менеджера пакетов pip
+
+  </title>
+  <link href="../css/mystylecontent.css" rel="stylesheet">
+  <!-- подключение локальной базы данных -->
+  <!-- <script type="text/javascript" src="../js/localdb.js"></script> -->
+ </head>
+ <body>
+	<div class="class">
+		<div id="back-top"><a href="#top"><img src="../images/uparrow.png" style="width: 50px; height: 80px;" alt=""></a></div>
+	</div>
+	<div id="head">
+		<a href="../index.html">На главную</a>
+		<a href="content.html">Содержание</a>
+	</div> 
+	<div id="article">
+		<div class="parent">
+			<div class="child">
+				<h1 class="boxShadow10">2.3 Использование менеджера пакетов pip</h1>						
+			</div>
+			<br>
+			<p>Здесь мы рассмотрим основные варианты использования pip:
+установку пакетов, удаление и обновление пакетов.
+<p align="justify">Pip позволяет установить самую последнюю версию пакета,
+конкретную версию или воспользоваться логическим выражением,
+через которое можно определить, что вам, например, нужна версия
+не ниже указанной. Также есть поддержка установки пакетов
+из репозитория. Рассмотрим, как использовать эти варианты (здесь
+Name – это имя пакета).</p>
+<p align="justify">– Установка последней версии пакета:</p>
+<p align="justify">> pip install Name</p>
+<p align="justify">– Установка определенной версии:</p>
+<p align="justify">> pip install Name==3.2</p>
+<p align="justify">– Установка пакета с версией не ниже 3.1:</p>
+<p align="justify">> pip install Name> =3.1</p>
+<p align="justify">– Для того чтобы удалить пакет, воспользуйтесь командой:</p>
+<p align="justify">> pip uninstall Name</p>
+<p align="justify">– Для обновления пакета используйте ключ – upgrade:</p>
+<p align="justify">> pip install – upgrade Name</p>
+<p align="justify">– Для вывода списка всех установленных пакетов служит команда:</p>
+<p align="justify">> pip list</p>
+<p align="justify">– Если вы хотите получить более подробную информацию
+о конкретном пакете, то используйте аргумент show:</p>
+<p align="justify">> pip show Name</p>
+<p align="justify">– Если вы не знаете точного названия пакета или хотите посмотреть
+на пакеты, содержащие конкретное слово, то вы можете это сделать,
+используя аргумент search:</p>
+<p align="justify">> pip search «test».</p>
+<p align="justify">Если вы запускаете pip в терминале Windows, то терминальное окно
+автоматически закроется после того, как эта утилита завершит свою
+работу. При этом вы просто не успеете увидеть результаты ее работы.
+Чтобы терминальное окно не закрывалось автоматически, команды pip
+нужно запускать в нем с ключом /k. Например, запуск процедуры
+установки пакета tensorflow должен выглядеть так, как показано на рис. 1.8.
+</p>
+<img src="https://sun9-east.userapi.com/sun9-19/s/v1/ig2/b-wq4dfQ_w20DHI6crAXLFNudot7MT_Bbd-IbtUQEtDv9XoF-xvSoKcfFLcgfnBsx_-UQxYtaEXS8HLLSp_8iwkd.jpg?size=430x212&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 1.8. </b> Выполнение команды модуля pip в терминальном окне Windows
+</p>
+<p>Если же пакет pip запускается из терминального окна PyCharm, то
+в использовании дополнительных ключей нет необходимости, так как
+терминальное окно после завершения работы программ
+не закрывается. Пример выполнения той же команды в терминальном
+окне PyCharm показан на рис. 1.9.
+</p>
+
+<img src="https://sun2.userapi.com/sun2-11/s/v1/ig2/Qo8ttRJN5mgZ2OLul5ZReWW6KUDfaD3CouS9sFYPTEbPyGsoc4x4YZYL6WWobgZ7I45d3zQPK4daUNy2v7-9GH3S.jpg?size=567x236&quality=96&type=album">
+<p style="text-align:center"><b>Рис. 1.9. </b> Выполнение команды модуля pip в терминальном окне
+PyCharm
+
+</p>
+		</div>
+    </div>
+	<div id="bottom">
+		<a href="topic2-2.html" class="buttons"><button class="button">Назад<span class="buttonhelp">Менеджер пакетов в Python – pip</span></button></a>	
+		<a href="content.html" class="buttons"><button class="button">К содержанию<span class="buttonhelp">Перейти к перечню заголовков</span></button></a>
+		<a href="topic2-4.html" class="buttons"><button class="button">Далее<span class="buttonhelp">Загрузка фреймворка Kivy и библиотеки
+KivyMD
+</span></button></a>	
+		<hr><p>Обучение кроссплатформенному программированию</p>
+	</div> 	
+ </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("body").css("display", "none");
+      	    $("body").fadeIn(300);
+	
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(300, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}    
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#back-top').fadeIn();
+				} else {
+					$('#back-top').fadeOut();
+				}
+			});
+			
+			$('#back-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>
